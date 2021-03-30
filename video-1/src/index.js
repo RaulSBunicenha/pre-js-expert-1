@@ -10,3 +10,13 @@ const GENDER = {
 
     assert.throws(() => employee.birthYear, { message: 'You must define age first!' })
 }
+
+{
+    const employee = new Employee({ name: 'Raul', gender: GENDER.male })
+    employee.age = 25
+
+    assert.deepStrictEqual(employee.name, "Mr. Raul")
+    assert.deepStrictEqual(employee.age, undefined)
+    assert.deepStrictEqual(employee.gender, undefined)
+    assert.strictEqual(employee.grossPay, 0)
+}

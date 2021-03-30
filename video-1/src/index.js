@@ -13,6 +13,9 @@ const GENDER = {
 }
 
 {
+    const CURRENT_YEAR = 2021
+    Date.prototype.getFullYear = () => CURRENT_YEAR
+
     const employee = new Employee({ name: 'Raul', gender: GENDER.male })
     employee.age = 25
 
@@ -21,4 +24,7 @@ const GENDER = {
     assert.deepStrictEqual(employee.gender, undefined)
     assert.deepStrictEqual(employee.grossPay, Util.formatCurrency(5000.40))
     assert.deepStrictEqual(employee.netPay, Util.formatCurrency(4000.32))
+
+    const expectedBirthYear = 1996
+    assert.deepStrictEqual(employee.birthYear, expectedBirthYear)
 }

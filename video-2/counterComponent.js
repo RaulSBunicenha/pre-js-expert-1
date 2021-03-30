@@ -11,7 +11,6 @@ class CounterComponent {
     getCounterProxy () {
         const handler = {
             set: (currentContext, propertyKey, newValue) => {
-                console.log({ currentContext, propertyKey, newValue })
                 if (!currentContext.value) currentContext.stopCounter()
                 else currentContext[propertyKey] = newValue
                 
@@ -50,8 +49,6 @@ class CounterComponent {
                 btnElement.setAttribute(attr, value)
                 return;
             }
-            
-            console.log('here')
             btnElement.removeAttribute(attr)
         }
     }

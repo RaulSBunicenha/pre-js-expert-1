@@ -1,4 +1,4 @@
-const { v4 } = require('uuid')
+const uuid = require('uuid')
 
 class Todo {
     constructor ({ text, when }) {
@@ -6,7 +6,7 @@ class Todo {
         this.when = when
 
         this.status = ''
-        this.id = v4()
+        this.id = uuid.v4()
     }
 
     isValid () {

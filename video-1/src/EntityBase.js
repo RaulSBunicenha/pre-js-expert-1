@@ -18,8 +18,8 @@ class EntityBase {
         this.#age = value
     }
 
-    get birthDate () {
-        if (!this.#age) throw new Error('You must define age first')
+    get birthYear () {
+        if (!this.#age) throw new Error('You must define age first!')
 
         return new Date().getFullYear() - this.#age
     }

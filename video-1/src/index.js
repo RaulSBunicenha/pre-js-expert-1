@@ -1,15 +1,12 @@
+const assert = require('assert')
 const Employee = require('./employee')
+const GENDER = {
+    male: 'male',
+    female: 'female'
+}
 
-console.log(new Employee({
-    name: 'Raul',
-    gender: 'male',
-    age: '24'
-}).birthDate)
+{
+    const employee = new Employee({ name: 'Renata', gender: GENDER.female })
 
-const renata = new Employee({
-    name: 'Renata',
-    gender: 'female',
-})
-renata.age = 27
-
-console.log(renata.grossPay)
+    assert.throws(() => employee.birthYear, { message: 'You must define age first!' })
+}

@@ -12,4 +12,4 @@ const renata = new Employee({
 })
 renata.age = 27
 
-console.log(renata.birthDate)
+console.log(renata.grossPay)

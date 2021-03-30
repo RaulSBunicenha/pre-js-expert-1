@@ -13,6 +13,16 @@ class EntityBase {
         const preffix = this.#gender == "male" ? "Mr." : "Ms."
         return `${preffix} ${this.#name}`
     }
+
+    set age (value) {
+        this.#age = value
+    }
+
+    get birthDate () {
+        if (!this.#age) throw new Error('You must define age first')
+
+        return new Date().getFullYear() - this.#age
+    }
 }
 
 module.exports = EntityBase

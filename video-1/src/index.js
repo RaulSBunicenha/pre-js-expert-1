@@ -1,11 +1,15 @@
-const EntityBase = require('./EntityBase')
+const Employee = require('./employee')
 
-console.log(new EntityBase({
+console.log(new Employee({
     name: 'Raul',
-    gender: 'male'
-}).name)
+    gender: 'male',
+    age: '24'
+}).birthDate)
 
-console.log(new EntityBase({
+const renata = new Employee({
     name: 'Renata',
-    gender: 'female'
-}).name)
+    gender: 'female',
+})
+renata.age = 27
+
+console.log(renata.birthDate)

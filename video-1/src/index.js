@@ -16,12 +16,9 @@ const GENDER = {
     const employee = new Employee({ name: 'Raul', gender: GENDER.male })
     employee.age = 25
 
-    console.time('employee-test')
     assert.deepStrictEqual(employee.name, "Mr. Raul")
     assert.deepStrictEqual(employee.age, undefined)
-    console.timeLog('employee-test')
     assert.deepStrictEqual(employee.gender, undefined)
     assert.deepStrictEqual(employee.grossPay, Util.formatCurrency(5000.40))
     assert.deepStrictEqual(employee.netPay, Util.formatCurrency(4000.32))
-    console.timeEnd('employee-test')
 }

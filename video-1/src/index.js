@@ -1,5 +1,6 @@
 const assert = require('assert')
 const Employee = require('./employee')
+const Util = require('./util')
 const GENDER = {
     male: 'male',
     female: 'female'
@@ -18,5 +19,5 @@ const GENDER = {
     assert.deepStrictEqual(employee.name, "Mr. Raul")
     assert.deepStrictEqual(employee.age, undefined)
     assert.deepStrictEqual(employee.gender, undefined)
-    assert.strictEqual(employee.grossPay, 0)
+    assert.deepStrictEqual(employee.grossPay, Util.formatCurrency(5000.40))
 }

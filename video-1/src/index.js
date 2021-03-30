@@ -1,5 +1,6 @@
 const assert = require('assert')
 const Employee = require('./Employee')
+const Manager = require('./Manager')
 const Util = require('./Util')
 const GENDER = {
     male: 'male',
@@ -33,4 +34,16 @@ const GENDER = {
 
     employee.age = 80
     assert.deepStrictEqual(employee.birthYear, newBirthYear)
+}
+
+{
+    const manager = new Manager({ name: 'Renata', gender: GENDER.female, age: '20' })
+
+    assert.deepStrictEqual(manager.name, 'Ms. Renata')
+    assert.deepStrictEqual(manager.age, undefined)
+    assert.deepStrictEqual(manager.gender, undefined)
+    assert.deepStrictEqual(manager.birthYear, 2001)
+    assert.deepStrictEqual(manager.grossPay, Util.formatCurrency(5000.40))
+    assert.deepStrictEqual(manager.bonuses, Util.formatCurrency(2000))
+    assert.deepStrictEqual(manager.netPay, Util.formatCurrency(6000.32))
 }
